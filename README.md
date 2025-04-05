@@ -2,6 +2,8 @@
 
 ## Refactoring: Movies
 
+## Luis Anibal Lobo Reyes y Ivan Esteban Vargas Martinez
+
 ## <em>**Versión 1.**</em> Clase “Customer” - Método “statement()”
 
 ### <em>**Smell code**</em>:
