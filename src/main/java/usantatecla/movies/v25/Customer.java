@@ -24,21 +24,21 @@ public class Customer {
 
     public String statement() {
         StringBuilder result = new StringBuilder("Rental Record for " + this.getName() + "\n");
-        this.rentals.forEach(rental -> result.append("\t").append(rental.getMovieTitle()).append(String.valueOf(rental.getCharge())).append("\n"));
+        this.rentals.forEach(rental -> result.append("\t").append(rental.getMovieTitle()).append("\t").append(String.valueOf(rental.getCharge())).append("\n"));
 
         result.append("Amount owed is ").append(String.valueOf(this.getTotalCharge())).append("\n");
         result.append("You earned ").append(String.valueOf(this.getTotalFrequentRenterPoints())).append(" frequent renter points");
         return result.toString();
     }
 
-    double getTotalCharge() {
+    public double getTotalCharge() {
         return  this.rentals
                 .stream()
                 .mapToDouble(Rental::getCharge)
                 .sum();
     }
 
-    int getTotalFrequentRenterPoints() {
+    public int getTotalFrequentRenterPoints() {
         return this.rentals
                 .stream()
                 .mapToInt(Rental::getFrequentRenterPoints)
